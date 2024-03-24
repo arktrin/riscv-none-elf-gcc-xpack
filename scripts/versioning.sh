@@ -242,7 +242,8 @@ function application_build_versioned_components()
     texinfo_build "${XBB_TEXINFO_VERSION}"
 
     # -------------------------------------------------------------------------
-
+    # Apply patch in order to support WCH-Interrupt-fast
+    GCC_PATCH_FILE_NAME="gcc-${GCC_VERSION}.patch.diff"
     # Download GCC earlier, to have time to run the multilib generator.
     gcc_cross_download
     gcc_cross_generate_riscv_multilib_file
